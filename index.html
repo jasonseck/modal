@@ -6,6 +6,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
   <!-- Trigger/Open The Modal -->
@@ -18,6 +19,60 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <p>Some text in the Modal..</p>
+      <table style="width:100%;">
+					<tbody><tr>
+						<th style="width:50%;">Hats</th>
+						<th style="width:25%;text-align:center;">Hat Size</th>
+						<th style="width:25%;text-align:center;">Inches</th>
+					</tr>
+					<tr>
+						<td class="highlight">EXTRA LARGE</td>
+						<td class="highlight" style="text-align:center;">7 1/2</td>
+						<td class="highlight" style="text-align:center;">24</td>
+					</tr>
+					<tr>
+						<td class="highlight"></td>
+						<td class="highlight" style="text-align:center;">7 7/8</td>
+						<td class="highlight" style="text-align:center;">24 1/2</td>
+					</tr>
+					<tr>
+						<td class="highlight"></td>
+						<td class="highlight" style="text-align:center;">8</td>
+						<td class="highlight" style="text-align:center;">24 3/4</td>
+					</tr>
+					<tr>
+						<td class="highlight"></td>
+						<td class="highlight" style="text-align:center;">8 1/8</td>
+						<td class="highlight" style="text-align:center;">25 1/8</td>
+					</tr>
+					<tr>
+						<td class="highlight"></td>
+						<td class="highlight" style="text-align:center;">8 1/4</td>
+						<td class="highlight" style="text-align:center;">25 1/2</td>
+					</tr>
+					<tr>
+						<td class="highlight"></td>
+						<td class="highlight" style="text-align:center;">8 3/8</td>
+						<td class="highlight" style="text-align:center;">25 7/8</td>
+					</tr>
+					<tr>
+						<td class="highlight"></td>
+						<td class="highlight" style="text-align:center;">8 1/2</td>
+						<td class="highlight" style="text-align:center;">26 3/8</td>
+					</tr>
+					<tr>
+						<td class="highlight"></td>
+						<td class="highlight" style="text-align:center;">8 5/8</td>
+						<td class="highlight" style="text-align:center;">26 3/4</td>
+					</tr>
+					<tr>
+						<td class="highlight"></td>
+						<td class="highlight" style="text-align:center;"></td>
+						<td class="highlight" style="text-align:center;">27</td>
+					</tr>
+
+				</tbody>
+      </table>
     </div>
 
   </div>
@@ -25,11 +80,16 @@
 
 <script>
 $(document).ready(function(){
-  $('#myBtn').click(function(){
-    $('.modal').css('display','block');
+  $('#myBtn').click(function(event){
+    event.stopPropagation();
+    $('.modal').css('display','block').animate({
+      opacity:1
+    },100,function(){
+      console.log('done');
+    })
   })
   $('.close').click(function(){
-    $('.modal').css('display','none');
+    $('.modal').css({'display':'none','opacity':'0'});
   })
 })
 </script>
